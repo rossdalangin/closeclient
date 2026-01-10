@@ -4,74 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | CloseClient.com</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-        .container { max-width: 1100px; margin: auto; overflow: auto; padding: 0 20px; }
-        header { background: #333; color: #fff; padding: 1rem 0; }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: bold; font-size: 1.5rem; }
-        nav ul { list-style: none; display: flex; }
-        nav ul li { margin-left: 20px; }
-        nav a { color: #fff; text-decoration: none; }
-        .cta-button { background: #ff6f61; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
-        .page-header { background: #f4f4f4; padding: 2rem 0; text-align: center; }
-        .section { padding: 4rem 0; }
-        .section h1, .section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 2rem; }
-        .service-box { border: 1px solid #ddd; padding: 2rem; margin-bottom: 2rem; border-radius: 5px; }
-        .footer { background: #333; color: #fff; text-align: center; padding: 2rem 0; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
+    <header class="header">
         <div class="container">
-            <nav>
-                <div class="logo">CloseClient.com</div>
+            <div class="logo">CloseClient.com</div>
+            <nav class="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
                     <li><a href="case-studies.html">Case Studies</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#contact" class="cta-button">Book a Free Call</a></li>
                 </ul>
             </nav>
+            <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
         </div>
     </header>
 
-    <section class="page-header">
-        <h1>Our Service: The Client Acquisition Website</h1>
-        <p>We have one service with one goal: to build you a website that predictably generates high-value clients.</p>
-    </section>
+    <main>
+        <section class="section-bg" style="padding-top: 4rem; padding-bottom: 4rem; text-align: center;">
+            <div class="container reveal">
+                <h1>Our Service: The Client Acquisition Website</h1>
+                <p class="sub-headline">We have one service with one goal: to build you a website that predictably generates high-value clients.</p>
+            </div>
+        </section>
 
-    <section class="section">
-        <div class="container">
-            <h2>What's Included in Your Client Acquisition Website</h2>
-            <div class="service-box">
-                <h3>1. Conversion Strategy &amp; Messaging</h3>
-                <p>This is the foundation. Before we design anything, we work with you to dial in your messaging, define your ideal client, and map out a clear strategy to turn visitors into leads. We don't build websites; we build sales funnels.</p>
+        <section class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="reveal">What's Included in Your Client Acquisition Website</h2>
             </div>
-            <div class="service-box">
-                <h3>2. Direct-Response Copywriting</h3>
-                <p>Great copy sells. Our team writes clear, persuasive, and sales-focused copy for every page of your site. We speak directly to your ideal client's pain points and position you as the only logical solution.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                <div class="card reveal">
+                    <h3>1. Conversion Strategy &amp; Messaging</h3>
+                    <p>This is the foundation. Before we design anything, we work with you to dial in your messaging, define your ideal client, and map out a clear strategy to turn visitors into leads. We don't build websites; we build sales funnels.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>2. Direct-Response Copywriting</h3>
+                    <p>Great copy sells. Our team writes clear, persuasive, and sales-focused copy for every page of your site. We speak directly to your ideal client's pain points and position you as the only logical solution.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>3. Authority-Building Design</h3>
+                    <p>Your website's design must instantly communicate credibility and trust. We create professional, modern, and clean designs that make you look like the high-end expert you are. This isn't about being "flashy"; it's about inspiring confidence.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>4. Technical Development &amp; Optimization</h3>
+                    <p>We handle all the technical details, building a fast, mobile-responsive, and SEO-friendly website. Your site will be easy to manage and built on a rock-solid foundation for future growth.</p>
+                </div>
             </div>
-            <div class="service-box">
-                <h3>3. Authority-Building Design</h3>
-                <p>Your website's design must instantly communicate credibility and trust. We create professional, modern, and clean designs that make you look like the high-end expert you are. This isn't about being "flashy"; it's about inspiring confidence.</p>
-            </div>
-            <div class="service-box">
-                <h3>4. Technical Development &amp; Optimization</h3>
-                <p>We handle all the technical details, building a fast, mobile-responsive, and SEO-friendly website. Your site will be easy to manage and built on a rock-solid foundation for future growth.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section" id="cta" style="background: #f4f4f4; text-align: center;">
-        <div class="container">
-            <h2>Ready for a Website That Pays for Itself?</h2>
-            <p>Our Client Acquisition Websites typically deliver a positive ROI within the first few months. Let's talk about how we can do the same for you.</p>
-            <a href="#contact" class="cta-button">Book Your Free Strategy Session</a>
-        </div>
-    </section>
+        <section id="cta" class="hero">
+            <div class="container reveal">
+                <h2>Ready for a Website That Pays for Itself?</h2>
+                <p class="sub-headline">Our Client Acquisition Websites typically deliver a positive ROI within the first few months. Let's talk about how we can do the same for you.</p>
+                <a href="contact.html" class="btn btn-primary">Book Your Free Strategy Session</a>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
@@ -79,5 +71,6 @@
         </div>
     </footer>
 
+    <script src="js/scripts.js"></script>
 </body>
 </html>

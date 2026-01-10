@@ -44,3 +44,44 @@ What a visitor must understand within 5 seconds of landing on the homepage:
 3.  **Who It's For:** Coaches, consultants, and lawyers.
 4.  **Why It's Different:** We focus on sales and ROI, not just design.
 5.  **What to Do Next:** Book a free consultation.
+
+## 6. Design System & Brand Language
+
+### Color Palette
+
+A professional, high-contrast palette designed to build trust and convey premium quality.
+
+*   **Primary (Deep Navy):** `#0A2342`
+    *   **Use:** Backgrounds for hero sections, footers, and key content blocks. Conveys stability, professionalism, and depth.
+*   **Secondary (Charcoal Gray):** `#2E2E2E`
+    *   **Use:** Body text, secondary headlines. A softer alternative to pure black that is easier on the eyes.
+*   **Accent (Burnished Gold):** `#D4AF37`
+    *   **Use:** Call-to-action buttons, key links, icons, and subtle highlights. Draws the eye and signifies value.
+*   **Neutral (Light Gray):** `#F8F9FA`
+    *   **Use:** Backgrounds for content sections, providing a clean and spacious feel.
+*   **White:** `#FFFFFF`
+    *   **Use:** Text on dark backgrounds, icons, and creating negative space.
+
+### Typography
+
+Modern, elegant, and highly legible fonts sourced from Google Fonts to ensure fast loading and accessibility.
+
+*   **Headlines (Serif):** `Playfair Display`
+    *   **Why:** Its high-contrast, delicate serifs project authority, elegance, and tradition—perfect for law firms and high-end consultants.
+    *   **Usage:** Main page titles and section headers. Use sparingly and at a large size for maximum impact.
+*   **Body & UI (Sans-serif):** `Lato`
+    *   **Why:** A clean, friendly, and exceptionally readable font that feels modern and professional. It doesn't compete with the headlines.
+    *   **Usage:** All paragraph text, button labels, navigation, and other UI elements.
+
+### Animation Philosophy
+
+Animations will be used purposefully to enhance the user experience, guide attention, and add a layer of sophistication. They must be subtle, smooth, and professional.
+
+*   **Principle 1: Purposeful:** Every animation must have a clear purpose, such as providing feedback on an interaction or smoothly introducing new content.
+*   **Principle 2: Subtle & Swift:** Animations should be gentle and quick (200-400ms duration) to feel responsive, not slow.
+*   **Principle 3: Performance-First:** Animations will be implemented using efficient CSS transitions and transforms to ensure they are smooth and don't slow down the page.
+
+*   **Specific Applications:**
+    *   **On-Scroll Reveals:** Sections and key elements will gently fade and slide into view as the user scrolls down the page.
+    *   **Interactive Hovers:** Buttons, links, and case study cards will have subtle transitions (e.g., a slight lift, a soft glow, or a color fade) to acknowledge user interaction.
+    *   **CTA Emphasis:** The primary "Book a Call" button may feature a very subtle, slow pulse to draw the user's attention without being distracting.
