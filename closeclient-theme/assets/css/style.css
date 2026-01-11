@@ -235,3 +235,70 @@ section {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* 12. Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+/* 13. Page-Specific Styles */
+.hero-small-text {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+.problem-list {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.problem-list li {
+    margin-bottom: 0.5rem;
+}
+
+.benefits-title {
+    margin-bottom: 3rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-grid img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.about-mission {
+    margin-top: 4rem;
+}
+
+.page-header {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
