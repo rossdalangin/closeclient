@@ -23,12 +23,18 @@ function closeclient_setup() {
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'closeclient' ),
     ) );
+
+    /**
+     * Implement the Kirki Customizer.
+     */
+    require get_template_directory() . '/inc/kirki/kirki.php';
+    if ( class_exists( 'Kirki' ) ) {
+        require get_template_directory() . '/inc/customizer.php';
+    }
 }
 add_action( 'after_setup_theme', 'closeclient_setup' );
 
 /**
- * Implement the Customizer.
+ * Implement dynamic CSS.
  */
-require get_template_directory() . '/inc/kirki/kirki.php';
-require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/dynamic-css.php';

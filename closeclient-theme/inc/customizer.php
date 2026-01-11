@@ -5,6 +5,18 @@
  * @package CloseClient
  */
 
+use Kirki\Control\Checkbox_Switch;
+use Kirki\Control\Sortable;
+use Kirki\Control\Typography;
+use Kirki\Control\Color;
+use Kirki\Control\Dimensions;
+use Kirki\Control\Dimension;
+use Kirki\Control\Background;
+
+if ( ! class_exists( 'Kirki' ) ) {
+	return;
+}
+
 function closeclient_customize_register( $wp_customize ) {
     // Site Identity Panel (for logo)
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
