@@ -16,6 +16,43 @@ function closeclient_customize_register( $wp_customize ) {
         'priority' => 10,
     ) );
 
+    // Homepage Section Management
+    $wp_customize->add_section( 'homepage_section_management', array(
+        'title'    => __( 'Section Management', 'closeclient' ),
+        'panel'    => 'front_page_settings',
+        'priority' => 1,
+    ) );
+
+    // Add enable/disable switches
+    $sections = ['hero', 'problem', 'solution', 'benefits', 'cta'];
+    foreach ($sections as $section) {
+        $wp_customize->add_setting( $section . '_section_enable', [
+            'default'   => true,
+            'transport' => 'refresh', // Refresh is needed to show/hide sections
+        ] );
+        $wp_customize->add_control( new Kirki\Control\Checkbox_Switch( $wp_customize, $section . '_section_enable', [
+            'label'   => esc_html__( ucwords($section) . ' Section', 'closeclient' ),
+            'section' => 'homepage_section_management',
+        ] ) );
+    }
+
+    // Add sortable control for section order
+    $wp_customize->add_setting( 'homepage_sections_order', [
+        'default'   => ['hero', 'problem', 'solution', 'benefits', 'cta'],
+        'transport' => 'refresh',
+    ] );
+    $wp_customize->add_control( new Kirki\Control\Sortable( $wp_customize, 'homepage_sections_order', [
+        'label'   => esc_html__( 'Section Order', 'closeclient' ),
+        'section' => 'homepage_section_management',
+        'choices' => [
+            'hero'     => esc_html__( 'Hero', 'closeclient' ),
+            'problem'  => esc_html__( 'Problem', 'closeclient' ),
+            'solution' => esc_html__( 'Solution', 'closeclient' ),
+            'benefits' => esc_html__( 'Benefits', 'closeclient' ),
+            'cta'      => esc_html__( 'CTA', 'closeclient' ),
+        ],
+    ] ) );
+
     // Hero Section
     $wp_customize->add_section( 'hero_section', array(
         'title'    => __( 'Hero Section', 'closeclient' ),
@@ -245,15 +282,61 @@ function closeclient_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'contact_form_placeholder_text', array( 'default' => 'In a real implementation, a tool like Calendly would be embedded here to allow for seamless, automated booking.', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'contact_form_placeholder_text', array( 'label' => 'Placeholder Text', 'section' => 'contact_page_main', 'type' => 'textarea' ) );
 
-    // Theme Styles
-    $wp_customize->add_panel( 'theme_styles', array(
-        'title'    => __( 'Theme Styles', 'closeclient' ),
+    // Global Styles Panel
+    $wp_customize->add_panel( 'global_styles', array(
+        'title'    => __( 'Global Styles', 'closeclient' ),
         'priority' => 60,
     ) );
 
+    // Typography Section
+    $wp_customize->add_section( 'typography', array(
+        'title'    => __( 'Typography', 'closeclient' ),
+        'panel'    => 'global_styles',
+    ) );
+
+    // Body Typography
+    $wp_customize->add_setting( 'body_typography', [
+        'default'   => [
+            'font-family'    => 'Lato',
+            'variant'        => '400',
+            'font-size'      => '1rem',
+            'line-height'    => '1.7',
+            'letter-spacing' => '0',
+            'color'          => '#2E2E2E',
+            'text-transform' => 'none',
+        ],
+        'transport' => 'postMessage',
+    ] );
+    $wp_customize->add_control( new Kirki\Control\Typography( $wp_customize, 'body_typography', [
+        'label'   => esc_html__( 'Body Font', 'closeclient' ),
+        'section' => 'typography',
+        'choices' => [
+            'fonts' => [
+                'google'   => ['popularity', 200],
+                'standard' => ['serif', 'sans-serif'],
+            ],
+        ],
+    ] ) );
+
+    // Headings Typography
+    for ($i = 1; $i <= 6; $i++) {
+        $wp_customize->add_setting( 'h' . $i . '_typography', [
+            'default'   => [
+                'font-family'    => 'Playfair Display',
+                'variant'        => '700',
+                'color'          => '#0A2342',
+            ],
+            'transport' => 'postMessage',
+        ] );
+        $wp_customize->add_control( new Kirki\Control\Typography( $wp_customize, 'h' . $i . '_typography', [
+            'label'   => esc_html__( 'Heading ' . $i, 'closeclient' ),
+            'section' => 'typography',
+        ] ) );
+    }
+
     $wp_customize->add_section( 'colors', array(
         'title'    => __( 'Colors', 'closeclient' ),
-        'panel'    => 'theme_styles',
+        'panel'    => 'global_styles',
     ) );
 
     $wp_customize->add_setting( 'primary_color', array( 'default' => '#0A2342', 'transport' => 'postMessage' ) );
@@ -274,40 +357,123 @@ function closeclient_customize_register( $wp_customize ) {
         'section'  => 'colors',
     ) ) );
 
+    // Button Styles
+    $wp_customize->add_section( 'button_styles', array(
+        'title'    => __( 'Buttons', 'closeclient' ),
+        'panel'    => 'global_styles',
+    ) );
+    $wp_customize->add_setting( 'button_background_color', array( 'default' => '#D4AF37', 'transport' => 'postMessage' ) );
+    $wp_customize->add_control( new Kirki\Control\Color( $wp_customize, 'button_background_color', array(
+        'label'   => esc_html__( 'Background Color', 'closeclient' ),
+        'section' => 'button_styles',
+    ) ) );
+    $wp_customize->add_setting( 'button_text_color', array( 'default' => '#FFFFFF', 'transport' => 'postMessage' ) );
+    $wp_customize->add_control( new Kirki\Control\Color( $wp_customize, 'button_text_color', array(
+        'label'   => esc_html__( 'Text Color', 'closeclient' ),
+        'section' => 'button_styles',
+    ) ) );
+    $wp_customize->add_setting( 'button_hover_background_color', array( 'default' => '#b38f29', 'transport' => 'postMessage' ) );
+    $wp_customize->add_control( new Kirki\Control\Color( $wp_customize, 'button_hover_background_color', array(
+        'label'   => esc_html__( 'Hover Background Color', 'closeclient' ),
+        'section' => 'button_styles',
+    ) ) );
+    $wp_customize->add_setting( 'button_padding', array(
+        'default' => ['top' => '0.9rem', 'right' => '2.2rem', 'bottom' => '0.9rem', 'left' => '2.2rem'],
+        'transport' => 'postMessage',
+    ) );
+    $wp_customize->add_control( new Kirki\Control\Dimensions( $wp_customize, 'button_padding', array(
+        'label'   => esc_html__( 'Padding', 'closeclient' ),
+        'section' => 'button_styles',
+    ) ) );
+    $wp_customize->add_setting( 'button_border_radius', array( 'default' => '5px', 'transport' => 'postMessage' ) );
+    $wp_customize->add_control( new Kirki\Control\Dimension( $wp_customize, 'button_border_radius', array(
+        'label'   => esc_html__( 'Border Radius', 'closeclient' ),
+        'section' => 'button_styles',
+    ) ) );
+
+    // Form Styles
+    $wp_customize->add_section( 'form_styles', array(
+        'title'    => __( 'Forms', 'closeclient' ),
+        'panel'    => 'global_styles',
+    ) );
+    $wp_customize->add_setting( 'form_input_background_color', array( 'default' => '#FFFFFF', 'transport' => 'postMessage' ) );
+    $wp_customize->add_control( new Kirki\Control\Color( $wp_customize, 'form_input_background_color', array(
+        'label'   => esc_html__( 'Input Background Color', 'closeclient' ),
+        'section' => 'form_styles',
+    ) ) );
+    $wp_customize->add_setting( 'form_input_text_color', array( 'default' => '#2E2E2E', 'transport' => 'postMessage' ) );
+    $wp_customize->add_control( new Kirki\Control\Color( $wp_customize, 'form_input_text_color', array(
+        'label'   => esc_html__( 'Input Text Color', 'closeclient' ),
+        'section' => 'form_styles',
+    ) ) );
+    $wp_customize->add_setting( 'form_input_border_color', array( 'default' => '#CCCCCC', 'transport' => 'postMessage' ) );
+    $wp_customize->add_control( new Kirki\Control\Color( $wp_customize, 'form_input_border_color', array(
+        'label'   => esc_html__( 'Input Border Color', 'closeclient' ),
+        'section' => 'form_styles',
+    ) ) );
+
 
     // Header Settings
     $wp_customize->add_section( 'header_settings', array(
         'title'    => __( 'Header Settings', 'closeclient' ),
-        'priority' => 30,
+        'priority' => 70,
     ) );
 
-    // Header Button Text
-    $wp_customize->add_setting( 'header_button_text', array(
-        'default'   => 'Book a Free Call',
+    // Header Background
+    $wp_customize->add_setting( 'header_background', [
+        'default'   => ['background-color' => '#FFFFFF'],
         'transport' => 'postMessage',
-    ) );
-    $wp_customize->add_control( 'header_button_text', array(
-        'label'    => __( 'Header Button Text', 'closeclient' ),
-        'section'  => 'header_settings',
-        'type'     => 'text',
-    ) );
+    ] );
+    $wp_customize->add_control( new Kirki\Control\Background( $wp_customize, 'header_background', [
+        'label'   => esc_html__( 'Background', 'closeclient' ),
+        'section' => 'header_settings',
+    ] ) );
 
-    // Header Button URL
-    $wp_customize->add_setting( 'header_button_url', array(
-        'default'   => '#',
+    // Header Padding
+    $wp_customize->add_setting( 'header_padding', [
+        'default'   => ['top' => '1.5rem', 'bottom' => '1.5rem'],
         'transport' => 'postMessage',
-    ) );
-    $wp_customize->add_control( 'header_button_url', array(
-        'label'    => __( 'Header Button URL', 'closeclient' ),
-        'section'  => 'header_settings',
-        'type'     => 'url',
-    ) );
+    ] );
+    $wp_customize->add_control( new Kirki\Control\Dimensions( $wp_customize, 'header_padding', [
+        'label'   => esc_html__( 'Padding', 'closeclient' ),
+        'section' => 'header_settings',
+    ] ) );
+
+    // Header Link Color
+    $wp_customize->add_setting( 'header_link_color', [
+        'default'   => '#0A2342',
+        'transport' => 'postMessage',
+    ] );
+    $wp_customize->add_control( new Kirki\Control\Color( $wp_customize, 'header_link_color', [
+        'label'   => esc_html__( 'Link Color', 'closeclient' ),
+        'section' => 'header_settings',
+    ] ) );
 
     // Footer Settings
     $wp_customize->add_section( 'footer_settings', array(
         'title'    => __( 'Footer Settings', 'closeclient' ),
-        'priority' => 40,
+        'priority' => 80,
     ) );
+
+    // Footer Background
+    $wp_customize->add_setting( 'footer_background', [
+        'default'   => ['background-color' => '#0A2342'],
+        'transport' => 'postMessage',
+    ] );
+    $wp_customize->add_control( new Kirki\Control\Background( $wp_customize, 'footer_background', [
+        'label'   => esc_html__( 'Background', 'closeclient' ),
+        'section' => 'footer_settings',
+    ] ) );
+
+    // Footer Text Color
+    $wp_customize->add_setting( 'footer_text_color', [
+        'default'   => '#FFFFFF',
+        'transport' => 'postMessage',
+    ] );
+    $wp_customize->add_control( new Kirki\Control\Color( $wp_customize, 'footer_text_color', [
+        'label'   => esc_html__( 'Text Color', 'closeclient' ),
+        'section' => 'footer_settings',
+    ] ) );
 
     // Footer Copyright Text
     $wp_customize->add_setting( 'footer_copyright_text', array(

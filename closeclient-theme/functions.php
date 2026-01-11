@@ -29,4 +29,6 @@ add_action( 'after_setup_theme', 'closeclient_setup' );
 /**
  * Implement the Customizer.
  */
+require get_template_directory() . '/inc/kirki/kirki.php';
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/dynamic-css.php';

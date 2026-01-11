@@ -6,12 +6,8 @@
 
 /* 2. CSS Variables (Root) for Easy Management */
 :root {
-    --primary-color: #0A2342; /* Deep Navy */
-    --secondary-color: #2E2E2E; /* Charcoal Gray */
-    --accent-color: #D4AF37; /* Burnished Gold */
     --neutral-bg: #F8F9FA; /* Light Gray */
     --white: #FFFFFF;
-    --text-color: var(--secondary-color);
     --headline-font: 'Playfair Display', serif;
     --body-font: 'Lato', sans-serif;
     --container-width: 1100px;
@@ -32,19 +28,12 @@ html {
 }
 
 body {
-    font-family: var(--body-font);
-    line-height: 1.7;
-    color: var(--text-color);
-    background-color: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--headline-font);
-    color: var(--primary-color);
     margin-bottom: 1rem;
-    font-weight: 700;
 }
 
 h1 { font-size: 3.5rem; }
@@ -57,13 +46,11 @@ p {
 }
 
 a {
-    color: var(--accent-color);
     text-decoration: none;
     transition: color var(--transition-speed) ease;
 }
 
 a:hover {
-    color: #b38f29; /* Darker gold on hover */
 }
 
 img {
@@ -88,9 +75,6 @@ section {
 
 /* 5. Header & Navigation */
 .header {
-    background-color: var(--white);
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e0e0e0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -104,10 +88,6 @@ section {
 }
 
 .logo {
-    font-family: var(--headline-font);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
 }
 
 .nav ul {
@@ -117,10 +97,6 @@ section {
 }
 
 .nav a {
-    font-family: var(--body-font);
-    font-weight: 700;
-    color: var(--primary-color);
-    font-size: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid transparent;
     transition: border-color var(--transition-speed) ease, color var(--transition-speed) ease;
@@ -128,17 +104,12 @@ section {
 
 .nav a:hover,
 .nav a.active {
-    color: var(--accent-color);
     border-bottom-color: var(--accent-color);
 }
 
 /* 6. Buttons */
 .btn {
     display: inline-block;
-    padding: 0.9rem 2.2rem;
-    font-family: var(--body-font);
-    font-weight: 700;
-    font-size: 1rem;
     border-radius: var(--border-radius);
     cursor: pointer;
     text-align: center;
@@ -147,27 +118,20 @@ section {
 }
 
 .btn-primary {
-    background-color: var(--accent-color);
-    color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: #b38f29;
-    color: var(--white);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* 7. Hero Section */
 .hero {
-    background-color: var(--primary-color);
-    color: var(--white);
     padding: 8rem 0;
     text-align: center;
 }
 
 .hero h1 {
-    color: var(--white);
     margin-bottom: 1.5rem;
 }
 
@@ -194,7 +158,6 @@ section {
 }
 
 .card h3 {
-    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -212,8 +175,6 @@ section {
 
 /* 10. Footer */
 .footer {
-    background-color: var(--primary-color);
-    color: var(--white);
     text-align: center;
     padding: 3rem 0;
     margin-top: 4rem;
