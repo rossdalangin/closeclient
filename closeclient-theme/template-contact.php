@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <main>
-    <section class="container page-header">
+    <section class="container page-header contact-header">
         <div class="reveal">
             <h1><?php echo esc_html( get_theme_mod( 'contact_header_title', "Let's Talk About Your Business" ) ); ?></h1>
             <p class="sub-headline"><?php echo esc_html( get_theme_mod( 'contact_header_subheadline', "The next step is a free, no-obligation 15-minute Strategy Session. We'll discuss your goals, analyze your current website, and give you actionable advice you can use immediately, whether you choose to work with us or not." ) ); ?></p>

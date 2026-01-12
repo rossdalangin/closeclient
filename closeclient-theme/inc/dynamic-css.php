@@ -31,6 +31,28 @@ function closeclient_dynamic_css() {
         }
     ';
 
+    $sections = ['hero', 'problem', 'solution', 'benefits', 'cta', 'about_header', 'services_header', 'case_studies_header', 'contact_header'];
+    foreach ($sections as $section) {
+        $bg_color = get_theme_mod($section . '_bg_color');
+        $bg_image = get_theme_mod($section . '_bg_image');
+        if ($bg_color || $bg_image) {
+            $selector = '#' . str_replace('_', '-', $section);
+            if (strpos($section, '_header') !== false) {
+                $selector = '.' . str_replace('_', '-', $section);
+            }
+            $css .= $selector . ' {';
+            if ($bg_color) {
+                $css .= 'background-color: ' . $bg_color . ';';
+            }
+            if ($bg_image) {
+                $css .= 'background-image: url(' . esc_url($bg_image) . ');';
+                $css .= 'background-size: cover;';
+                $css .= 'background-position: center;';
+            }
+            $css .= '}';
+        }
+    }
+
     wp_add_inline_style( 'main-styles', $css );
 }
 add_action( 'wp_enqueue_scripts', 'closeclient_dynamic_css' );

@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <main>
-    <section class="section-bg page-header">
+    <section class="section-bg page-header case-studies-header">
         <div class="container reveal">
             <h1><?php echo esc_html( get_theme_mod( 'case_studies_header_title', 'The Proof is in the Results' ) ); ?></h1>
             <p class="sub-headline"><?php echo esc_html( get_theme_mod( 'case_studies_header_subheadline', "We're not just designers; we're growth partners. Here's how we've helped businesses like yours." ) ); ?></p>

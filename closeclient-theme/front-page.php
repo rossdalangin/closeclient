@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <main>
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="container">
             <h1 class="reveal"><?php echo esc_html( get_theme_mod( 'hero_headline', 'Your Website Should Make You Money. Ours Do.' ) ); ?></h1>
             <p class="sub-headline reveal"><?php echo esc_html( get_theme_mod( 'hero_subheadline', 'Stop wasting money on beautiful brochures. We build strategic, sales-driven websites for coaches, consultants, and lawyers that turn visitors into high-value clients.' ) ); ?></p>

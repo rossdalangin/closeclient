@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <main>
-    <section class="section-bg page-header">
+    <section class="section-bg page-header about-header">
         <div class="container reveal">
             <h1><?php echo esc_html( get_theme_mod( 'about_header_title', "We're Business Growth Experts Who Happen to Build Websites" ) ); ?></h1>
         </div>

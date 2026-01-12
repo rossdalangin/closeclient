@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <main>
-    <section class="section-bg page-header">
+    <section class="section-bg page-header services-header">
         <div class="container reveal">
             <h1><?php echo esc_html( get_theme_mod( 'services_header_title', 'Our Service: The Client Acquisition Website' ) ); ?></h1>
             <p class="sub-headline"><?php echo esc_html( get_theme_mod( 'services_header_subheadline', 'We have one service with one goal: to build you a website that predictably generates high-value clients.' ) ); ?></p>

@@ -22,6 +22,18 @@ function closeclient_customize_register( $wp_customize ) {
         'panel'    => 'front_page_settings',
     ) );
 
+    $wp_customize->add_setting( 'hero_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hero_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'hero_section',
+    ) ) );
+
+    $wp_customize->add_setting( 'hero_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'hero_section',
+    ) ) );
+
     $wp_customize->add_setting( 'hero_headline', array( 'default' => 'Your Website Should Make You Money. Ours Do.', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'hero_headline', array( 'label' => 'Headline', 'section' => 'hero_section', 'type' => 'textarea' ) );
 
@@ -42,6 +54,19 @@ function closeclient_customize_register( $wp_customize ) {
         'title'    => __( 'Problem Section', 'closeclient' ),
         'panel'    => 'front_page_settings',
     ) );
+
+    $wp_customize->add_setting( 'problem_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'problem_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'problem_section',
+    ) ) );
+
+    $wp_customize->add_setting( 'problem_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'problem_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'problem_section',
+    ) ) );
+
     $wp_customize->add_setting( 'problem_title', array( 'default' => 'Is Your Website a Glorified Brochure?', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'problem_title', array( 'label' => 'Title', 'section' => 'problem_section', 'type' => 'text' ) );
     $wp_customize->add_setting( 'problem_paragraph', array( 'default' => "If you're frustrated with a website that looks good but fails to generate leads, you're not alone. Most web developers focus on aesthetics, not results. They don't understand business, and it's costing you.", 'transport' => 'postMessage' ) );
@@ -60,6 +85,19 @@ function closeclient_customize_register( $wp_customize ) {
         'title'    => __( 'Solution Section', 'closeclient' ),
         'panel'    => 'front_page_settings',
     ) );
+
+    $wp_customize->add_setting( 'solution_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'solution_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'solution_section',
+    ) ) );
+
+    $wp_customize->add_setting( 'solution_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solution_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'solution_section',
+    ) ) );
+
     $wp_customize->add_setting( 'solution_title', array( 'default' => "We Don't Build Websites. We Build Client-Closing Machines.", 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'solution_title', array( 'label' => 'Title', 'section' => 'solution_section', 'type' => 'text' ) );
     $wp_customize->add_setting( 'solution_paragraph', array( 'default' => 'A CloseClient.com website is different. We combine conversion-focused design, direct-response copywriting, and a sales-driven strategy to create a predictable system for attracting and closing your ideal clients.', 'transport' => 'postMessage' ) );
@@ -70,6 +108,19 @@ function closeclient_customize_register( $wp_customize ) {
         'title'    => __( 'Benefits Section', 'closeclient' ),
         'panel'    => 'front_page_settings',
     ) );
+
+    $wp_customize->add_setting( 'benefits_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'benefits_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'benefits_section',
+    ) ) );
+
+    $wp_customize->add_setting( 'benefits_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'benefits_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'benefits_section',
+    ) ) );
+
     $wp_customize->add_setting( 'benefits_title', array( 'default' => 'The Difference is in the Results', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'benefits_title', array( 'label' => 'Title', 'section' => 'benefits_section', 'type' => 'text' ) );
 
@@ -96,6 +147,19 @@ function closeclient_customize_register( $wp_customize ) {
         'title'    => __( 'CTA Section', 'closeclient' ),
         'panel'    => 'front_page_settings',
     ) );
+
+    $wp_customize->add_setting( 'cta_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'cta_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'cta_section',
+    ) ) );
+
+    $wp_customize->add_setting( 'cta_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cta_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'cta_section',
+    ) ) );
+
     $wp_customize->add_setting( 'cta_title', array( 'default' => 'Ready to Turn Your Website into Your #1 Salesperson?', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'cta_title', array( 'label' => 'Title', 'section' => 'cta_section', 'type' => 'text' ) );
     $wp_customize->add_setting( 'cta_subheadline', array( 'default' => "Let's have a quick, 15-minute chat to discuss your business goals and see if we're a good fit. No pressure, no sales pitch.", 'transport' => 'postMessage' ) );
@@ -115,6 +179,19 @@ function closeclient_customize_register( $wp_customize ) {
         'title'    => __( 'Header', 'closeclient' ),
         'panel'    => 'about_page_settings',
     ) );
+
+    $wp_customize->add_setting( 'about_header_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'about_header_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'about_page_header',
+    ) ) );
+
+    $wp_customize->add_setting( 'about_header_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_header_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'about_page_header',
+    ) ) );
+
     $wp_customize->add_setting( 'about_header_title', array( 'default' => "We're Business Growth Experts Who Happen to Build Websites", 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'about_header_title', array( 'label' => 'Title', 'section' => 'about_page_header', 'type' => 'textarea' ) );
 
@@ -151,6 +228,19 @@ function closeclient_customize_register( $wp_customize ) {
         'title'    => __( 'Header', 'closeclient' ),
         'panel'    => 'services_page_settings',
     ) );
+
+    $wp_customize->add_setting( 'services_header_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'services_header_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'services_page_header',
+    ) ) );
+
+    $wp_customize->add_setting( 'services_header_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'services_header_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'services_page_header',
+    ) ) );
+
     $wp_customize->add_setting( 'services_header_title', array( 'default' => 'Our Service: The Client Acquisition Website', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'services_header_title', array( 'label' => 'Title', 'section' => 'services_page_header', 'type' => 'text' ) );
     $wp_customize->add_setting( 'services_header_subheadline', array( 'default' => 'We have one service with one goal: to build you a website that predictably generates high-value clients.', 'transport' => 'postMessage' ) );
@@ -193,6 +283,19 @@ function closeclient_customize_register( $wp_customize ) {
         'title'    => __( 'Header', 'closeclient' ),
         'panel'    => 'case_studies_page_settings',
     ) );
+
+    $wp_customize->add_setting( 'case_studies_header_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'case_studies_header_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'case_studies_page_header',
+    ) ) );
+
+    $wp_customize->add_setting( 'case_studies_header_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'case_studies_header_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'case_studies_page_header',
+    ) ) );
+
     $wp_customize->add_setting( 'case_studies_header_title', array( 'default' => 'The Proof is in the Results', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'case_studies_header_title', array( 'label' => 'Title', 'section' => 'case_studies_page_header', 'type' => 'text' ) );
     $wp_customize->add_setting( 'case_studies_header_subheadline', array( 'default' => "We're not just designers; we're growth partners. Here's how we've helped businesses like yours.", 'transport' => 'postMessage' ) );
@@ -231,6 +334,19 @@ function closeclient_customize_register( $wp_customize ) {
         'title'    => __( 'Header', 'closeclient' ),
         'panel'    => 'contact_page_settings',
     ) );
+
+    $wp_customize->add_setting( 'contact_header_bg_color', array( 'default' => '' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'contact_header_bg_color', array(
+        'label'    => __( 'Background Color', 'closeclient' ),
+        'section'  => 'contact_page_header',
+    ) ) );
+
+    $wp_customize->add_setting( 'contact_header_bg_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'contact_header_bg_image', array(
+        'label'    => __( 'Background Image', 'closeclient' ),
+        'section'  => 'contact_page_header',
+    ) ) );
+
     $wp_customize->add_setting( 'contact_header_title', array( 'default' => "Let's Talk About Your Business", 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'contact_header_title', array( 'label' => 'Title', 'section' => 'contact_page_header', 'type' => 'text' ) );
     $wp_customize->add_setting( 'contact_header_subheadline', array( 'default' => "The next step is a free, no-obligation 15-minute Strategy Session. We'll discuss your goals, analyze your current website, and give you actionable advice you can use immediately, whether you choose to work with us or not.", 'transport' => 'postMessage' ) );
