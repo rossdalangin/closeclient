@@ -55,4 +55,4 @@ function closeclient_dynamic_css() {
 
     wp_add_inline_style( 'main-styles', $css );
 }
-add_action( 'wp_enqueue_scripts', 'closeclient_dynamic_css' );
+add_action( 'wp_enqueue_scripts', 'closeclient_dynamic_css', 20 );
